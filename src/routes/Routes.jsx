@@ -3,6 +3,7 @@ import Main from '../layouts/Main'
 import Home from '../pages/Home/Home'
 import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
+import Collages from '../pages/Collages/Collages'
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/collages",
+        element: <Collages></Collages>
       }
     ]
   },
