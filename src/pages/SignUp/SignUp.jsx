@@ -5,28 +5,66 @@ import { useContext, useRef } from 'react'
 import { AuthContext } from '../../providers/AuthProvider'
 import { TbFidgetSpinner } from 'react-icons/tb'
 
-const Login = () => {
-    const { loading, setLoading, signIn, signInWithGoogle, resetPassword } =
-        useContext(AuthContext)
+const SignUp = () => {
+    const {
+        loading,
+        setLoading,
+        signInWithGoogle,
+        createUser,
+        updateUserProfile,
+    } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
-    const emailRef = useRef()
-    // Handle submit
+
+    // Handle user registration
     const handleSubmit = event => {
         event.preventDefault()
+        const name = event.target.name.value
         const email = event.target.email.value
         const password = event.target.password.value
-        signIn(email, password)
-            .then(result => {
-                console.log(result.user)
-                navigate(from, { replace: true })
+
+        // Image Upload
+        const image = event.target.image.files[0]
+        const formData = new FormData()
+        formData.append('image', image)
+
+        const url = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY
+            }`
+        fetch(url, {
+            method: 'POST',
+            body: formData,
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                const imageUrl = imageData.data.display_url
+
+                createUser(email, password)
+                    .then(result => {
+                        updateUserProfile(name, imageUrl)
+                            .then(() => {
+                                toast.success('Signup successful')
+                                navigate(from, { replace: true })
+                            })
+                            .catch(err => {
+                                setLoading(false)
+                                console.log(err.message)
+                                toast.error(err.message)
+                            })
+                    })
+                    .catch(err => {
+                        setLoading(false)
+                        console.log(err.message)
+                        toast.error(err.message)
+                    })
             })
             .catch(err => {
                 setLoading(false)
                 console.log(err.message)
                 toast.error(err.message)
             })
+
+        return
     }
 
     // Handle google signin
@@ -42,30 +80,12 @@ const Login = () => {
                 toast.error(err.message)
             })
     }
-
-    //   handle password reset
-    const handleReset = () => {
-        const email = emailRef.current.value
-
-        resetPassword(email)
-            .then(() => {
-                toast.success('Please check your email for reset link')
-                setLoading(false)
-            })
-            .catch(err => {
-                setLoading(false)
-                console.log(err.message)
-                toast.error(err.message)
-            })
-    }
     return (
         <div className='flex justify-center items-center min-h-screen'>
             <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
                 <div className='mb-8 text-center'>
-                    <h1 className='my-3 text-4xl font-bold'>Log <span className='text-[#F43F5E]'>In</span></h1>
-                    <p className='text-sm text-gray-400'>
-                        Sign in to access your account
-                    </p>
+                    <h1 className='my-3 text-4xl font-bold'>Sign <span className='text-[#F43F5E]'>Up</span></h1>
+                    <p className='text-sm text-gray-400'>Welcome to AirCNC</p>
                 </div>
                 <form
                     onSubmit={handleSubmit}
@@ -76,10 +96,34 @@ const Login = () => {
                     <div className='space-y-4'>
                         <div>
                             <label htmlFor='email' className='block mb-2 text-sm'>
+                                Name
+                            </label>
+                            <input
+                                type='text'
+                                name='name'
+                                id='name'
+                                placeholder='Enter Your Name Here'
+                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                                data-temp-mail-org='0'
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='image' className='block mb-2 text-sm'>
+                                Select Image:
+                            </label>
+                            <input
+                                required
+                                type='file'
+                                id='image'
+                                name='image'
+                                accept='image/*'
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='email' className='block mb-2 text-sm'>
                                 Email address
                             </label>
                             <input
-                                ref={emailRef}
                                 type='email'
                                 name='email'
                                 id='email'
@@ -119,18 +163,10 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
-                <div className='space-y-1'>
-                    <button
-                        onClick={handleReset}
-                        className='text-xs hover:underline hover:text-rose-500 text-gray-400'
-                    >
-                        Forgot password?
-                    </button>
-                </div>
                 <div className='flex items-center pt-4 space-x-1'>
                     <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                     <p className='px-3 text-sm dark:text-gray-400'>
-                        Login with social accounts
+                        Signup with social accounts
                     </p>
                     <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                 </div>
@@ -143,12 +179,12 @@ const Login = () => {
                     <p>Continue with Google</p>
                 </div>
                 <p className='px-6 text-sm text-center text-gray-400'>
-                    Don't have an account yet?{' '}
+                    Already have an account?{' '}
                     <Link
-                        to='/signup'
+                        to='/login'
                         className='hover:underline hover:text-rose-500 text-gray-600'
                     >
-                        Sign up
+                        Login
                     </Link>
                     .
                 </p>
@@ -157,4 +193,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default SignUp
