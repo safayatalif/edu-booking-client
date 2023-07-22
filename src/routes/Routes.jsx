@@ -9,6 +9,7 @@ import { getCollage } from '../api/collages'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import PrivateRoute from './PrivateRoute'
 import AdmissionPage from '../pages/AdmissionPage/AdmissionPage'
+import AdmissionForm from '../pages/AdmissionPage/AdmissionForm'
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ export const router = createBrowserRouter([
         path: "/admission",
         element: <AdmissionPage></AdmissionPage>
       },
+      {
+        path: "admission/:id",
+        element: <PrivateRoute><AdmissionForm></AdmissionForm></PrivateRoute>,
+        loader: ({ params }) => getCollage(params.id)
+      }
     ]
   },
   { path: '/login', element: <Login /> },
