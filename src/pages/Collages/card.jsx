@@ -1,8 +1,12 @@
+import { AiFillStar, AiOutlineArrowRight } from "react-icons/ai"
+import { GiArchiveResearch } from "react-icons/gi"
 import HeartButton from "../../components/Button/HeartButton"
+import { Link } from 'react-router-dom';
 
-const Card = () => {
+const Card = ({ collage }) => {
+    const { collegeImage, collegeName, collegeRating, admissionDate, researchCount, _id } = collage
     return (
-        <div className='col-span-1 cursor-pointer group'>
+        <div className='col-span-1  group'>
             <div className='flex flex-col gap-2 w-full'>
                 <div
                     className='
@@ -21,7 +25,7 @@ const Card = () => {
               group-hover:scale-110 
               transition
             '
-                        src='https://a0.muscache.com/im/pictures/4f70b681-a792-4530-8c52-f2a8d262942d.jpg'
+                        src={collegeImage}
                         alt='Room'
                     />
                     <div
@@ -34,13 +38,14 @@ const Card = () => {
                         <HeartButton />
                     </div>
                 </div>
-                <div className='font-semibold text-lg'>Sidemen, Indonesia</div>
+                <div className='font-semibold text-lg'>{collegeName}</div>
                 <div className='font-light text-neutral-500'>
-                    5 nights . June 19 - 26
+                    <span className="font-bold text-gray-600">Admission Date: </span><span className="text-sm">{admissionDate}</span>
                 </div>
-                <div className='flex flex-row items-center gap-1'>
-                    <div className='font-semibold'>$ 200</div>
-                    <div className='font-light'>night</div>
+                <div className='flex flex-row justify-between items-center text-neutral-500'>
+                    <div className='font-semibold'><AiFillStar className="inline-block " size={18}></AiFillStar> {collegeRating}</div>
+                    <div className='font-semibold'><GiArchiveResearch size={18} className="inline-block "></GiArchiveResearch> {researchCount}</div>
+                    <Link to={`${_id}`} className='font-semibold cursor-pointer'><AiOutlineArrowRight className="text-rose-500 mr-2" size={20}></AiOutlineArrowRight></Link>
                 </div>
             </div>
         </div>

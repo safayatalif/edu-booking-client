@@ -2,6 +2,7 @@
     {
         "collegeImage": "https://img.freepik.com/premium-photo/beautiful-country-house-modern-style_1127-4467.jpg?size=626&ext=jpg&ga=GA1.2.1613183627.1673832056&semt=ais",
         "collegeName": "Example University",
+        "collegeDescription": "An institution known for groundbreaking medical research and innovative healthcare solutions.",
         "collegeRating": 4.5,
         "admissionDate": "2023-08-15",
         "researchCount": 120,
@@ -46,6 +47,7 @@
     {
         "collegeImage": "https://img.freepik.com/free-photo/architecture-independence-palace-ho-chi-minh-city_181624-21243.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "Sample College",
+        "collegeDescription": "A prestigious law school known for producing top-notch legal professionals.",
         "collegeRating": 3.8,
         "admissionDate": "2023-09-01",
         "researchCount": 85,
@@ -86,6 +88,7 @@
     {
         "collegeImage": "https://img.freepik.com/free-photo/glass-buildings-seen-from-lake_1127-2268.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "Institute of Technology",
+        "collegeDescription": "A renowned music conservatory with a rich tradition of nurturing musical talents.",
         "collegeRating": 4.2,
         "admissionDate": "2023-07-30",
         "researchCount": 150,
@@ -126,6 +129,7 @@
     {
         "collegeImage": "https://img.freepik.com/free-photo/aerial-view-residence-bukovinian-dalmatian-metropolitans-chernivtsi-national-university-chernivtsi-touristic-destination-western-ukraine_231208-41.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "University of Arts",
+        "collegeDescription": "A top-ranked business school offering specialized programs and networking opportunities.",
         "collegeRating": 4.8,
         "admissionDate": "2023-08-20",
         "researchCount": 50,
@@ -166,6 +170,7 @@
     {
         "collegeImage": "https://img.freepik.com/free-photo/aerial-view-residence-bukovinian-dalmatian-metropolitans-chernivtsi-national-university-chernivtsi-touristic-destination-western-ukraine_231208-45.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "Business School",
+        "collegeDescription": "A leading institute of technology fostering innovation and technological advancements.",
         "collegeRating": 4.0,
         "admissionDate": "2023-09-05",
         "researchCount": 90,
@@ -206,6 +211,7 @@
     {
         "collegeImage": "https://img.freepik.com/premium-photo/aerial-view-jabatan-perdana-menteri-daytime-putrajaya-malaysia_29505-938.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "Medical College",
+        "collegeDescription": "A university known for its excellence in arts and culture, providing a vibrant creative environment.",
         "collegeRating": 4.6,
         "admissionDate": "2023-07-25",
         "researchCount": 200,
@@ -246,6 +252,7 @@
     {
         "collegeImage": "https://img.freepik.com/free-photo/highrise-new-background-office-day_1417-80.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "Law School",
+        "collegeDescription": "A reputed college of commerce and economics, shaping future business leaders.",
         "collegeRating": 4.2,
         "admissionDate": "2023-08-10",
         "researchCount": 70,
@@ -286,6 +293,7 @@
     {
         "collegeImage": "https://img.freepik.com/free-photo/building-lake_1127-3045.jpg?size=626&ext=jpg&ga=GA1.1.1613183627.1673832056&semt=ais",
         "collegeName": "Music Conservatory",
+        "collegeDescription": "A premier engineering college empowering students to build cutting-edge solutions.",
         "collegeRating": 4.7,
         "admissionDate": "2023-08-05",
         "researchCount": 30,

@@ -4,6 +4,8 @@ import Home from '../pages/Home/Home'
 import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
 import Collages from '../pages/Collages/Collages'
+import CollageDetails from '../pages/CollageDetails/CollageDetails'
+import { getCollage } from '../api/collages'
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,11 @@ export const router = createBrowserRouter([
       {
         path: "/collages",
         element: <Collages></Collages>
+      },
+      {
+        path: "collages/:id",
+        element: <CollageDetails></CollageDetails>,
+        loader: ({ params }) => getCollage(params.id)
       }
     ]
   },
