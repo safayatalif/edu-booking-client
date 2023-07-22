@@ -51,7 +51,7 @@ const MenuDropdown = () => {
                             Colleges
                         </Link>
                         <Link
-                            to='/'
+                            to='/admission'
                             className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                         >
                             Admission

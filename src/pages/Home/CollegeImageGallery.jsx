@@ -42,7 +42,7 @@ const CollegeImageGallery = () => {
             </div>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {collegeGraduates.map((graduate, index) => (
-                    <div key={index} className="relative">
+                    <div key={index} className="relative hover:scale-105 duration-500 cursor-pointer">
                         <img src={graduate.imageUrl} alt={`College Graduates ${index + 1}`} className="w-full rounded" />
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                             <p className="text-white text-center font-semibold">{graduate.caption}</p>

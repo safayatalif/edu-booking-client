@@ -8,6 +8,7 @@ import CollageDetails from '../pages/CollageDetails/CollageDetails'
 import { getCollage } from '../api/collages'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import PrivateRoute from './PrivateRoute'
+import AdmissionPage from '../pages/AdmissionPage/AdmissionPage'
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ export const router = createBrowserRouter([
         path: "collages/:id",
         element: <PrivateRoute><CollageDetails></CollageDetails></PrivateRoute>,
         loader: ({ params }) => getCollage(params.id)
-      }
+      },
+      {
+        path: "/admission",
+        element: <AdmissionPage></AdmissionPage>
+      },
     ]
   },
   { path: '/login', element: <Login /> },
