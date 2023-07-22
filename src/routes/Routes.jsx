@@ -6,11 +6,14 @@ import SignUp from '../pages/SignUp/SignUp'
 import Collages from '../pages/Collages/Collages'
 import CollageDetails from '../pages/CollageDetails/CollageDetails'
 import { getCollage } from '../api/collages'
+import ErrorPage from '../pages/ErrorPage/ErrorPage'
+import PrivateRoute from './PrivateRoute'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Main />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -22,7 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "collages/:id",
-        element: <CollageDetails></CollageDetails>,
+        element: <PrivateRoute><CollageDetails></CollageDetails></PrivateRoute>,
         loader: ({ params }) => getCollage(params.id)
       }
     ]

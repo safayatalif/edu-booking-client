@@ -4,6 +4,7 @@ import CollagesSection from './CollagesSection';
 import CollegeImageGallery from './CollegeImageGallery';
 import ResearchPaperSection from './ResearchPaperSection';
 import ReviewSection from './ReviewSection';
+import EventsSection from './EventsSection';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <CollegeImageGallery></CollegeImageGallery>
             <ResearchPaperSection></ResearchPaperSection>
             <ReviewSection></ReviewSection>
+            <EventsSection></EventsSection>
         </Container>
     );
 };

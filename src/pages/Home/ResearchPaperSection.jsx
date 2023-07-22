@@ -40,7 +40,7 @@ const ResearchPaperSection = () => {
                             href={paper.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block bg-blue-500 text-white text-center py-2 px-4 rounded hover:bg-blue-600"
+                            className="block bg-rose-500 text-white text-center py-2 px-4 rounded hover:bg-rose-600"
                         >
                             Read Paper
                         </a>
