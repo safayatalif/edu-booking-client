@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Heading from '../../components/Shared/Heading/Heading';
 import { getAllCollages } from '../../api/collages';
-import Card from './card';
+import Card from './Card';
 import Container from '../../components/Shared/Container';
 
 const Collages = () => {
