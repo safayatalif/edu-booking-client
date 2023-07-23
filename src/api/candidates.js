@@ -1,5 +1,5 @@
 export const addCandidate = async candidateData => {
-    const response = await fetch(`http://localhost:5000/candidate`, {
+    const response = await fetch(`https://edu-bookings-server.vercel.app/candidate`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -13,7 +13,7 @@ export const addCandidate = async candidateData => {
 
 // Get all my collages for email
 export const getCollagesByEmail = async email => {
-    const response = await fetch(`http://localhost:5000/candidates/${email}`)
+    const response = await fetch(`https://edu-bookings-server.vercel.app/candidates/${email}`)
     const data = await response.json()
     return data
 }

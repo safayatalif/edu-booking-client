@@ -28,7 +28,7 @@ const CollagesSection = () => {
             </div>
             <div className='pt-12'>
                 <Heading
-                    title='Some Collages'
+                    title='Popular Collages'
                     subtitle='Discover top colleges with exciting offerings for a brighter future. Explore facilities, events, and sports opportunities.'
                     center={false}
                 />

@@ -6,6 +6,8 @@
         "collegeRating": 4.5,
         "admissionDate": "2023-08-15",
         "researchCount": 120,
+        "admissionProcess": "Admission to Example University is based on a rigorous selection process, including entrance exams and interviews.",
+        "researchWorks": "The research at Example University focuses on cutting-edge medical advancements, disease prevention, and improved healthcare techniques.",
         "researchHistory": "Example University has a rich research history with groundbreaking contributions in various fields.",
         "collegeEvents": {
             "event1": {
@@ -51,6 +53,8 @@
         "collegeRating": 3.8,
         "admissionDate": "2023-09-01",
         "researchCount": 85,
+        "admissionProcess": "Sample College admits students through a comprehensive admission process that includes academic performance evaluation and interviews.",
+        "researchWorks": "The research at Sample College spans multiple disciplines, including legal studies, international law, and human rights.",
         "researchHistory": "Sample College fosters a culture of research and innovation, contributing to various academic fields.",
         "collegeEvents": {
             "event1": {
@@ -92,6 +96,8 @@
         "collegeRating": 4.2,
         "admissionDate": "2023-07-30",
         "researchCount": 150,
+        "admissionProcess": "The Institute of Technology admits students based on their performance in the entrance examination and interviews.",
+        "researchWorks": "The research at the Institute of Technology focuses on emerging technologies, computer science, and artificial intelligence.",
         "researchHistory": "The Institute of Technology is renowned for cutting-edge research and technological advancements.",
         "collegeEvents": {
             "event1": {
@@ -133,6 +139,8 @@
         "collegeRating": 4.8,
         "admissionDate": "2023-08-20",
         "researchCount": 50,
+        "admissionProcess": "The University of Arts conducts a comprehensive admission process that includes portfolio review, auditions, and interviews for various artistic disciplines.",
+        "researchWorks": "The research at the University of Arts revolves around exploring different forms of art, cultural studies, and creative expressions.",
         "researchHistory": "The University of Arts has a rich legacy of fostering creativity and artistic expression.",
         "collegeEvents": {
             "event1": {
@@ -174,6 +182,8 @@
         "collegeRating": 4.0,
         "admissionDate": "2023-09-05",
         "researchCount": 90,
+        "admissionProcess": "The Business School admits students based on their academic records, competitive exams, and interviews.",
+        "researchWorks": "The research at the Business School focuses on business management, entrepreneurship, and market trends.",
         "researchHistory": "The Business School emphasizes research in business strategies and entrepreneurial ventures.",
         "collegeEvents": {
             "event1": {
@@ -215,6 +225,8 @@
         "collegeRating": 4.6,
         "admissionDate": "2023-07-25",
         "researchCount": 200,
+        "admissionProcess": "Admission to the Medical College is highly competitive and involves multiple rounds of evaluation, including entrance exams, interviews, and academic records.",
+        "researchWorks": "The research at the Medical College covers various medical specialties, disease treatments, and patient care.",
         "researchHistory": "An institution known for groundbreaking medical research and innovative healthcare solutions.",
         "collegeEvents": {
             "event1": {
@@ -256,6 +268,8 @@
         "collegeRating": 4.2,
         "admissionDate": "2023-08-10",
         "researchCount": 70,
+        "admissionProcess": "Admission to the Law School involves a stringent selection process, including written exams, interviews, and evaluation of academic background.",
+        "researchWorks": "The research at the Law School focuses on legal studies, constitutional law, and social justice.",
         "researchHistory": "A prestigious law school known for producing top-notch legal professionals.",
         "collegeEvents": {
             "event1": {
@@ -297,6 +311,8 @@
         "collegeRating": 4.7,
         "admissionDate": "2023-08-05",
         "researchCount": 30,
+        "admissionProcess": "The Music Conservatory admits students based on auditions, musical talent evaluations, and academic achievements.",
+        "researchWorks": "The research at the Music Conservatory explores various musical forms, music theory, and the impact of music on society.",
         "researchHistory": "A renowned music conservatory with a rich tradition of nurturing musical talents.",
         "collegeEvents": {
             "event1": {

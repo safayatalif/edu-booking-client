@@ -1,5 +1,5 @@
 export const addReview = async reviewData => {
-    const response = await fetch(`http://localhost:5000/review`, {
+    const response = await fetch(`https://edu-bookings-server.vercel.app/review`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -13,7 +13,7 @@ export const addReview = async reviewData => {
 
 // Get all reviews
 export const getAllReview = async () => {
-    const response = await fetch(`http://localhost:5000/reviews`)
+    const response = await fetch(`https://edu-bookings-server.vercel.app/reviews`)
     const data = await response.json()
     return data
 }

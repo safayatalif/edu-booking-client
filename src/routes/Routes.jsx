@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute'
 import AdmissionPage from '../pages/AdmissionPage/AdmissionPage'
 import AdmissionForm from '../pages/AdmissionPage/AdmissionForm'
 import MyCollages from '../pages/MyCollages/MyCollages'
+import Profile from '../pages/Profile/Profile'
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "/mycollages",
         element: <MyCollages></MyCollages>
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>
       }
     ]
   },
