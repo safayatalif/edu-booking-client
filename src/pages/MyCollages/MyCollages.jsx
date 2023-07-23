@@ -5,19 +5,21 @@ import { AuthContext } from '../../providers/AuthProvider';
 import Heading from '../../components/Shared/Heading/Heading';
 import Loader from '../../components/Shared/Loader';
 import { TbFidgetSpinner } from 'react-icons/tb';
+import { addReview } from '../../api/reviews';
+import { toast } from 'react-hot-toast';
 
 const MyCollages = () => {
     const [myCollages, setMyCollages] = useState([]);
     const { user } = useContext(AuthContext);
     const [loading, setLoading] = useState(true);
-    const [reviewLoading, setReviewLoading] = useState(true)
+    const [reviewLoading, setReviewLoading] = useState(false)
 
 
 
     useEffect(() => {
         getCollagesByEmail(user?.email)
             .then(data => {
-                setMyCollages(data)
+                setMyCollages(data);
                 setLoading(false)
             })
     }, [])
@@ -28,16 +30,21 @@ const MyCollages = () => {
         const comment = event.target.comment.value;
         const collageName = event.target.collageName.value;
 
-        event.target.reset()
         const review = {
             rating,
             comment,
             collageName
         }
-        console.log(review)
+        addReview(review)
+            .then(data => {
+                toast.success('Review Added!');
+                event.target.reset();
+                setReviewLoading(false)
+
+            })
+            .catch(err => console.log(err))
     }
 
-    console.log(myCollages)
     return (
         <Container>
             <div className='py-12'>
@@ -90,6 +97,7 @@ const MyCollages = () => {
                                         <div>
                                             <button
                                                 type='submit'
+                                                onClick={() => setReviewLoading(true)}
                                                 className='bg-rose-500 w-full rounded-md py-3 text-white'
                                             >
                                                 {reviewLoading ? (

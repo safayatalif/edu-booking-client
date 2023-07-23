@@ -1,26 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Heading from '../../components/Shared/Heading/Heading';
+import { getAllReview } from '../../api/reviews';
 
 const ReviewSection = () => {
-    // Sample data of college reviews (Replace with actual data)
-    const collegeReviews = [
-        {
-            collegeName: 'ABC College',
-            review: 'Great college with excellent facilities and supportive faculty!',
-            rating: 4.5,
-        },
-        {
-            collegeName: 'XYZ University',
-            review: 'Amazing campus and diverse range of courses. Highly recommended!',
-            rating: 4.8,
-        },
-        {
-            collegeName: 'PQR Institute',
-            review: 'Top-notch education and friendly environment. Proud to be an alumnus!',
-            rating: 4.7,
-        },
-        // Add more reviews as needed
-    ];
+    const [loading, setLoading] = useState(true)
+    const [reviews, setReviews] = useState([]);
+
+
+    useEffect(() => {
+        getAllReview()
+            .then(data => {
+                setReviews(data)
+                setLoading(false)
+            })
+    }, [])
+
 
     return (
         <section className="py-12">
@@ -28,16 +22,16 @@ const ReviewSection = () => {
                 <Heading
                     title='College Reviews'
                     subtitle='Discover College Experiences: Read Reviews and Ratings from Students - A glimpse into our community s opinions and insights.'
-                center={false}
+                    center={false}
                 />
             </div>
             <div className="grid gap-4">
-                {collegeReviews.map((review, index) => (
+                {reviews.map((review, index) => (
                     <div key={index} className="bg-white rounded shadow p-4">
-                        <h3 className="text-xl font-semibold mb-2">{review.collegeName}</h3>
-                        <p className="text-gray-600 mb-4">{review.review}</p>
+                        <h3 className="text-xl font-semibold mb-2">{review.collageName}</h3>
+                        <p className="text-gray-600 mb-4">{review.comment}</p>
                         <div className="flex items-center">
-                            <span className="mr-2">Rating:</span>
+                            <span className="mr-2">Rating: {review.rating}</span>
                             <div className="flex">
                                 {[...Array(Math.floor(review.rating))].map((_, i) => (
                                     <svg
