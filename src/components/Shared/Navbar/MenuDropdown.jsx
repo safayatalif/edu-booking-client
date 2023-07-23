@@ -11,7 +11,7 @@ const MenuDropdown = () => {
     return (
         <div className='relative'>
             <div className='flex flex-row items-center gap-3'>
-                <Link className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
+                <Link to="/mycollages" className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
                     My College
                 </Link>
                 {/* <Link className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
@@ -57,18 +57,27 @@ const MenuDropdown = () => {
                             Admission
                         </Link>
                         <Link
-                            to='/'
+                            to='/mycollages'
                             className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                         >
                             My College
                         </Link>
                         {user ? (
-                            <div
-                                onClick={logOut}
-                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
-                            >
-                                Logout
-                            </div>
+                            <>
+                                <Link
+                                    to='/profile'
+                                    className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                >
+                                    Profile
+                                </Link>
+                                <div
+                                    onClick={logOut}
+                                    className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
+                                >
+                                    Logout
+                                </div>
+                            </>
+
                         ) : (
                             <>
                                 <Link

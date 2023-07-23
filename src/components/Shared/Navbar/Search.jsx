@@ -1,4 +1,5 @@
 import { BiSearch } from 'react-icons/bi'
+import { FaBookReader } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Search = () => {
@@ -13,9 +14,9 @@ const Search = () => {
                     Admission
                 </Link>
                 <div className='text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3'>
-                    <input className='rounded-xl p-2 w-full' type="text" placeholder='Search Collage' />
+                    {/* <input className='rounded-xl p-2 w-full' type="text" placeholder='Search Collage' /> */}
                     <div className='p-2 bg-rose-500 rounded-full text-white'>
-                        <BiSearch size={18} />
+                        <FaBookReader size={18} />
                     </div>
                 </div>
             </div>

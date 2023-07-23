@@ -10,6 +10,7 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import PrivateRoute from './PrivateRoute'
 import AdmissionPage from '../pages/AdmissionPage/AdmissionPage'
 import AdmissionForm from '../pages/AdmissionPage/AdmissionForm'
+import MyCollages from '../pages/MyCollages/MyCollages'
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
         path: "admission/:id",
         element: <PrivateRoute><AdmissionForm></AdmissionForm></PrivateRoute>,
         loader: ({ params }) => getCollage(params.id)
+      },
+      {
+        path: "/mycollages",
+        element: <MyCollages></MyCollages>
       }
     ]
   },

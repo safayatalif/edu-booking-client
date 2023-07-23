@@ -43,8 +43,9 @@ const SignUp = () => {
                     .then(result => {
                         updateUserProfile(name, imageUrl)
                             .then(() => {
-                                toast.success('Signup successful')
-                                navigate(from, { replace: true })
+                                toast.success('Signup successful');
+                                event.target.reset();
+                                navigate(from, { replace: true });
                             })
                             .catch(err => {
                                 setLoading(false)
@@ -63,8 +64,6 @@ const SignUp = () => {
                 console.log(err.message)
                 toast.error(err.message)
             })
-
-        return
     }
 
     // Handle google signin
